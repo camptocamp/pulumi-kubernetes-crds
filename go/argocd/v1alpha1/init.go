@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppProject{}
 	case "kubernetes:argoproj.io/v1alpha1:Application":
 		r = &Application{}
+	case "kubernetes:argoproj.io/v1alpha1:ApplicationSet":
+		r = &ApplicationSet{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
